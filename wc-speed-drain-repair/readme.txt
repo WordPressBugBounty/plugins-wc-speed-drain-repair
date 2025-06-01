@@ -3,8 +3,8 @@ Contributors: wpfixit
 Donate link: http://wpfixit.com
 Tags: woocommerce, speed up woocomerce, woocommerce speed, fast woocommerce
 Requires at least: 3.0.1
-Tested up to: 6.3
-Stable tag: 2.0
+Tested up to: 6.8
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -82,6 +82,12 @@ No, once activated yo uare all set and you will see the speed differecne
 1. Before and After Speed Test
 
 == Changelog ==
+
+= 2.5 June 1st 2025  =
+* Adjust to work well with WordPress 6.8 release
+
+= 2.2 November 14th, 2023  =
+* Adjust to work well with WordPress 6.4 release
 
 = 2.0 January 19th, 2022  =
 * Get plugin ready for WordPress 6.0

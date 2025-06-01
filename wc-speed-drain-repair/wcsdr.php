@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WooCommerce Speed Drain Repair - WP Fix It
-Version: 2.0
+Version: 2.5
 Plugin URI: https://www.wpfixit.com
 Description: WooCommerce can really drain server resources and slow down the load of your site. This plugin stops loading the items you do not need and speeds up WordPress core admin-ajax.php file. There are no settings for this plugin and will do what is needs to as soon as it is activated.
 Author: WP Fix It
