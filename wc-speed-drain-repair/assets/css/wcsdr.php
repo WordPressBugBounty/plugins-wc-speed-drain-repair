@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WooCommerce Speed Repair
+Plugin Name: WooCommerce Speed Drain Repair
 Plugin URI: https://www.wpfixit.com
 Description: Optimize WooCommerce performance by disabling selected frontend assets that aren't needed on non-commerce pages. This plugin reduces load times and server resource usage by letting you control exactly which styles and scripts WooCommerce loads. Ideal for speeding up high-traffic or resource-heavy WooCommerce sites, with instant toggle-based settings and no coding required.
 Version: 4.0
@@ -8,8 +8,7 @@ Author: WP Fix It - WordPress Experts
 Author URI: https://www.wpfixit.com
 Requires Plugins: woocommerce
 Requires at least: 5.6
-Requires PHP: 7.4
-License: GPL2
+Requires PHP: 7.2
 */
 
 if (!defined('ABSPATH')) exit;
@@ -195,8 +194,8 @@ function repair_woocommerce_speed_render_settings_page() {
             <form method="post" action="options.php">
                 <?php settings_fields('repair_woocommerce_speed_options'); ?>
 <div style="margin-top: 25px; margin-bottom: 30px; display: flex; gap: 12px;">
-    <button type="button" id="woo-speed-select-all" class="woo-speed-bulk-btn woo-speed-bulk-select">Disable All</button>
-    <button type="button" id="woo-speed-deselect-all" class="woo-speed-bulk-btn woo-speed-bulk-deselect">Enable All</button>
+    <button type="button" id="woo-speed-select-all" class="woo-speed-bulk-btn woo-speed-bulk-select">Select All</button>
+    <button type="button" id="woo-speed-deselect-all" class="woo-speed-bulk-btn woo-speed-bulk-deselect">Deselect All</button>
 </div>
                 <?php
 $group_descriptions = [

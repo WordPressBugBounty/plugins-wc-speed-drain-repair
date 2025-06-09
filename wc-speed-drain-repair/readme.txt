@@ -1,114 +1,122 @@
-=== WooCommerce Speed Drain Repair ===
-Contributors: wpfixit
-Donate link: http://wpfixit.com
-Tags: woocommerce, speed up woocomerce, woocommerce speed, fast woocommerce
-Requires at least: 3.0.1
-Tested up to: 6.8
-Stable tag: 2.5
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== WooCommerce Speed Repair ===
+Contributors: wpfixit  
+Donate link: https://wpfixit.com  
+Tags: woocommerce, performance, speed, optimization, scripts, dequeue  
+Requires at least: 5.6  
+Tested up to: 6.8  
+Requires PHP: 7.2  
+Stable tag: 4.0  
+License: GPLv2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
-Make WooCommerce sites BLAZING Fast!
+Make WooCommerce sites BLAZING fast by disabling unused scripts and styles with one-click toggles.
 
 == Description ==
 
-WooCommerce can really drain server resources and slow down the load of your site. This plugin stops loading the extra items you do not need inside WooCommerce and speeds up WordPress core admin-ajax.php file.
+WooCommerce is powerful — but it loads dozens of scripts and styles even when they’re not needed, which can slow your site down.
 
-**Adds the below function:**
+This plugin gives you an **instant performance boost** by letting you disable unnecessary WooCommerce frontend assets on non-WooCommerce pages.
 
-`add_action( 'wp_enqueue_scripts', 'child_manage_woocommerce_styles', 99 );
-  
-function child_manage_woocommerce_styles() {
-    //remove generator meta tag
-    remove_action( 'wp_head', array( $GLOBALS['woocommerce'], 'generator' ) );
-  
-    //first check that woo exists to prevent fatal errors
-    if ( function_exists( 'is_woocommerce' ) ) {
-        //dequeue scripts and styles
-        if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
-            wp_dequeue_style( 'woocommerce_frontend_styles' );
-            wp_dequeue_style( 'woocommerce_fancybox_styles' );
-            wp_dequeue_style( 'woocommerce_chosen_styles' );
-            wp_dequeue_style( 'woocommerce_prettyPhoto_css' );
-            wp_dequeue_script( 'wc_price_slider' );
-            wp_dequeue_script( 'wc-single-product' );
-            wp_dequeue_script( 'wc-add-to-cart' );
-            wp_dequeue_script( 'wc-cart-fragments' );
-            wp_dequeue_script( 'wc-checkout' );
-            wp_dequeue_script( 'wc-add-to-cart-variation' );
-            wp_dequeue_script( 'wc-single-product' );
-            wp_dequeue_script( 'wc-cart' );
-            wp_dequeue_script( 'wc-chosen' );
-            wp_dequeue_script( 'woocommerce' );
-            wp_dequeue_script( 'prettyPhoto' );
-            wp_dequeue_script( 'prettyPhoto-init' );
-            wp_dequeue_script( 'jquery-blockui' );
-            wp_dequeue_script( 'jquery-placeholder' );
-            wp_dequeue_script( 'fancybox' );
-            wp_dequeue_script( 'jqueryui' );
-        }
-    }
- }`
+= Features =
+- One-click toggles for each WooCommerce asset (JS/CSS)
+- Grouped by functionality: Core Scripts, Cart, Block Styles, General Styles
+- AJAX-saving (no page reloads)
+- Toast confirmation on setting save
+- "Select All" and "Deselect All" buttons to quickly apply optimizations
 
-If you are  are curious what exactly the above function does, we can explain more clearly as to what its doing. Its important to know what you are installing
+By reducing what loads on non-commerce pages, your site becomes leaner and faster — especially for blog, landing, or informational pages.
 
-**This plugin instructs WP to not load the huge variety of WooCommerce scripts unless the user is on a WooCommerce page.**
+= How It Works =
 
-So the Non-WooCommerce pages of the site will surely load faster since many of these WooCommerce scripts are loaded on each and every page. The store itself will have some memory saved using this plugin, so the WooCommerce pages will be faster as well.
+Only WooCommerce pages (like shop, cart, checkout, and product pages) truly need WooCommerce assets. So this plugin:
 
-To sum it up, this plugin will turn off the WooCommerce heavy script on Non-WooCommerce pages which we see very valuable because if you are marketing your site well, there should be a blog and these pages will be Non-WooCommerce which will be indexed and drive traffic to products. Almost all visitors will land on a Non-WooCommerce page in most e-commerce sites. 
+- Lets you turn off WooCommerce assets on non-WooCommerce pages
+- Automatically preserves functionality where needed (e.g. checkout/cart)
+- Saves bandwidth, server load, and improves core Web Vitals
 
-<strong>There is NO EASIER or FASTER way to speed up WooCommerce sites</strong>
-
+There’s no need to write any code or modify theme files.
 
 == Installation ==
 
-= Install from WP Dashboard =
-  * Log into WP dashboard then click **Plugins** > **Add new** > Then under the title "Install Plugins" click **Upload** > **choose the zip** > **Activate the plugin!**
+= Install via WP Admin =
 
-= Install from FTP =
-  * Extract the zip file and drop the contents in the wp-content/plugins/ directory of your WP installation and then activate the Plugin from Plugins page. 
+1. Go to **Plugins > Add New**
+2. Click **Upload Plugin** and select the `.zip` file
+3. Click **Install Now**, then **Activate**
 
-= THAT IS IT: You're done! =
+= Install via FTP =
+
+1. Upload the extracted plugin folder to `/wp-content/plugins/`
+2. Activate it from your **Plugins** page
 
 == Frequently Asked Questions ==
 
-= Do I need to do anything after plugin is activated =
+= Does it work with all WooCommerce themes? =
 
-No, once activated yo uare all set and you will see the speed differecne
+Yes! It works with any theme that uses standard WooCommerce scripts/styles.
+
+= Do I need to configure anything after activating? =
+
+Yes — visit **Settings > Woo Speed Repair** to turn off assets you don’t need.
+
+= Is it safe to disable everything? =
+
+Some assets are safe to disable if you’re not using that WooCommerce feature sitewide. For example: if you don’t use the mini cart, you can safely disable its styles/scripts on non-Woo pages.
+
+= Can I undo a setting? =
+
+Yes, just toggle the switch again to re-enable the asset.
 
 == Screenshots ==
 
-1. Before and After Speed Test
+1. Performance gains shown in PageSpeed test
+2. Admin UI with toggle switches
+3. Script asset debugger in the admin bar
+4. CSS asset debugger in the admin bar
+
 
 == Changelog ==
 
-= 2.5 June 1st 2025  =
-* Adjust to work well with WordPress 6.8 release
+= 4.0 =
+* Released: June 9, 2025
+* Complete redesign with toggle-based UI
+* AJAX saving and toast confirmations
+* Added "Select All" / "Deselect All" controls
+* Cleaned up legacy codebase
+* Improved WooCommerce 6.8 compatibility
 
-= 2.2 November 14th, 2023  =
-* Adjust to work well with WordPress 6.4 release
+= 2.5 =
+* Released: June 1, 2025
+* Adjusted to work with WordPress 6.8 release
 
-= 2.0 January 19th, 2022  =
-* Get plugin ready for WordPress 6.0
+= 2.2 =
+* Released: November 14, 2023
+* Adjusted to work with WordPress 6.4 release
 
-= 1.3 January 21st, 2020  =
-* Update to run on new version of WordPress core
+= 2.0 =
+* Released: January 19, 2022
+* Prepared plugin for WordPress 6.0
 
-= 1.2 November 21st, 2017  =
-* Update to run on new version of WordPress core
+= 1.3 =
+* Released: January 21, 2020
+* Updated for newer WP core
 
-= 1.0 September 30th, 2015  =
-* First release of plugin.
+= 1.2 =
+* Released: November 21, 2017
+* Maintenance update
+
+= 1.0 =
+* Released: September 30, 2015
+* First release
 
 
 == Upgrade Notice ==
 
-= 2.0 =
-* Get plugin ready for WordPress 6.0
+= 4.0 =  
+Major upgrade: new UI, toggle logic, AJAX settings, better compatibility
 
-= 1.0 =
-Get ready for some serious speed
+= 2.0 =  
+Ready for WordPress 6.0
 
-= 1.3 =
-Asset changes
+= 1.3 =  
+Asset logic changes and compatibility
