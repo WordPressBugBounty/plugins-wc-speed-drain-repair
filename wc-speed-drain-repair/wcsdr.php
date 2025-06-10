@@ -3,7 +3,7 @@
 Plugin Name: WooCommerce Speed Repair
 Plugin URI: https://www.wpfixit.com
 Description: Optimize WooCommerce performance by disabling selected frontend assets that aren't needed on non-commerce pages. This plugin reduces load times and server resource usage by letting you control exactly which styles and scripts WooCommerce loads. Ideal for speeding up high-traffic or resource-heavy WooCommerce sites, with instant toggle-based settings and no coding required.
-Version: 4.2
+Version: 4.3
 Author: WP Fix It - WordPress Experts
 Author URI: https://www.wpfixit.com
 Requires Plugins: woocommerce
@@ -42,6 +42,14 @@ add_action('admin_enqueue_scripts', function ($hook) {
         ]);
     }
 });
+
+// Register charts.js
+$chart_file = plugin_dir_path(__FILE__) . 'assets/js/charts.js';
+$chart_url  = plugins_url('assets/js/charts.js', __FILE__);
+$chart_ver  = file_exists($chart_file) ? filemtime($chart_file) : time();
+wp_enqueue_script('woo-speed-charts-js', $chart_url, ['chartjs'], $chart_ver, true);
+wp_register_script('chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', [], null, true);
+
 // Redirect to settings page after activation
 register_activation_hook(__FILE__, function () {
     set_transient('_repair_woocommerce_speed_do_redirect', true, 30);
@@ -70,11 +78,9 @@ add_action('admin_menu', function () {
         'repair_woocommerce_speed_render_settings_page'
     );
 }, 99);
-
 add_action('admin_menu', function () {
     remove_submenu_page('options-general.php', 'repair_woocommerce_speed_settings');
 }, 100);
-
 // Register settings page
 add_action('admin_menu', function () {
     add_options_page(
@@ -191,25 +197,23 @@ function repair_woocommerce_speed_render_settings_page() {
     WooCommerce Speed Repair Settings
 </h1>
             <p style="font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 0px;">
-    These settings allow you to selectively disable specific WooCommerce styles and scripts that load across your site even when they&#8217;re not needed. By turning off unnecessary assets on non-WooCommerce pages, you can reduce page load time, decrease resource usage, and improve your site&#8217;s overall speed and performance. All options are safe to disable when you're not actively using those features on the frontend.
-</p><div class="wrap" style="display: flex; gap: 30px;"><div style="flex: 3;">
-<img src="<?php echo plugins_url('assets/images/info-1.png', __FILE__); ?>" style="height: 100%;max-width: 100%;margin: 0 auto;display: block;" loading="lazy" decoding="async">
-</div>
-<div style="flex: 3;">
-<img src="<?php echo plugins_url('assets/images/info-2.png', __FILE__); ?>" style="height: 100%;max-width: 100%;margin: 0 auto;display: block;" loading="lazy" decoding="async">
-</div>
-<div style="flex: 3;">
-<img src="<?php echo plugins_url('assets/images/info-3.png', __FILE__); ?>" style="height: 100%;max-width: 100%;margin: 0 auto;display: block;" loading="lazy" decoding="async">
-</div>
-</div>
-<div style="background: #fff8c4;color: #444;border: 1px solid #ffe58f;padding: 8px 12px;border-radius: 4px;margin-top: 8px;font-size: 14px;">
-    <strong>Note:</strong> When a toggle is <strong>ON</strong>, the corresponding asset is <strong>disabled</strong> on non-WooCommerce pages to improve performance.
-</div>
+    These settings allow you to selectively disable specific WooCommerce styles and scripts that load across your site even when they&#8217;re not needed.
+</p>
+<p style="font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 0px;">
+By turning off unnecessary assets on non-WooCommerce pages, you can reduce page load time, decrease resource usage, and improve your site&#8217;s overall speed and performance.
+</p>
+<p style="font-size: 15px; line-height: 1.6; color: #555; margin-bottom: 0px;">
+All options are safe to disable when you're not actively using those features on the frontend. <strong>This plugin will magicly detect when they are needed.</strong>
+</p>
+<?php include plugin_dir_path(__FILE__) . 'includes/asset-summary.php'; ?>
             <form method="post" action="options.php">
                 <?php settings_fields('repair_woocommerce_speed_options'); ?>
 <div style="margin-top: 25px; margin-bottom: 30px; display: flex; gap: 12px;">
     <button type="button" id="woo-speed-select-all" class="woo-speed-bulk-btn woo-speed-bulk-select">Disable All</button>
     <button type="button" id="woo-speed-deselect-all" class="woo-speed-bulk-btn woo-speed-bulk-deselect">Enable All</button>
+</div>
+<div style="background: #fff8c4;color: #444;border: 1px solid #ffe58f;padding: 8px 12px;border-radius: 4px;margin-top: 8px;font-size: 14px;">
+    <strong>Note:</strong> When a toggle is <strong>ON</strong>, the corresponding asset is <strong>disabled</strong> on non-WooCommerce pages to improve performance.
 </div>
                 <?php
 $group_descriptions = [
@@ -261,7 +265,7 @@ if ($group_title === 'Mini Cart Assets') {
                 <?php //submit_button(); ?>
             </form>
             </div>
-        <div style="flex: 1; border-left: 1px solid #ccc; padding-left: 20px;max-width: 444px;">
+        <div style="flex: 1; border-left: 1px solid #ccc; padding-left: 20px;max-width: 444px;margin-top: 55px;">
             <style>.settings-sidebar {background: #444 url('<?php echo plugins_url('assets/images/box-bg.png', __FILE__); ?>') no-repeat center center;}</style>
 <div class="settings-sidebar">
     <a href="https://www.wpfixit.com" target="_blank" class="wpfi-hover-raise">
@@ -291,6 +295,13 @@ if ($group_title === 'Mini Cart Assets') {
     <p>Easily preview how a website looks on multiple devices, ensuring responsiveness and consistency across different screen sizes.</p>
     <a href="https://www.wpfixit.com/tools/device-view/" target="_blank" class="wpfi-hover-raise">
         <img src="<?php echo plugins_url('assets/images/device-view.png', __FILE__); ?>" alt="WP Fix It - WordPress Experts" style="border-radius: 12px; width: 325px;" title="Device View Tool" loading="lazy" decoding="async">
+    </a>
+</div>
+<div class="settings-sidebar">
+    <h2 style="margin-top:15px; font-size:25px; font-weight:700; color:#d16aff;">Domain Detective Tool</h2>
+    <p>Accessing details about a domain's hosting, server, DNS records, health, speed and how it looks across multiple devices is quick and easy.</p>
+    <a href="https://www.wpfixit.com/tools/domain-detective/" target="_blank" class="wpfi-hover-raise">
+        <img src="<?php echo plugins_url('assets/images/domain-detective.png', __FILE__); ?>" alt="WP Fix It - WordPress Experts" style="border-radius: 12px; width: 325px;" title="Device View Tool" loading="lazy" decoding="async">
     </a>
 </div>
         </div>
