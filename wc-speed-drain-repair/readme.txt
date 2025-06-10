@@ -1,40 +1,39 @@
 === WooCommerce Speed Repair ===
-Contributors: wpfixit  
-Donate link: https://wpfixit.com  
-Tags: woocommerce, performance, speed, optimization, scripts, dequeue  
-Requires at least: 5.6  
-Tested up to: 6.8  
-Requires PHP: 7.2  
-Stable tag: 4.0  
-License: GPLv2 or later  
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+Contributors: wpfixit
+Tags: Make WooCommerce sites BLAZING fast, WooCommerce Speed, disabling unused WooCommerce scripts and styles
+Requires at least: 5.5
+Tested up to: 6.8
+Stable tag: 4.1
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Make WooCommerce sites BLAZING fast by disabling unused scripts and styles with one-click toggles.
+Make WooCommerce sites BLAZING fast by disabling unused scripts and styles with one click toggles.
 
 == Description ==
 
-WooCommerce is powerful — but it loads dozens of scripts and styles even when they’re not needed, which can slow your site down.
+WooCommerce is powerful but it loads dozens of scripts and styles even when they are re not needed, which can slow your site down.
 
-This plugin gives you an **instant performance boost** by letting you disable unnecessary WooCommerce frontend assets on non-WooCommerce pages.
+This plugin gives you an instant performance boost by letting you disable unnecessary WooCommerce frontend assets on non WooCommerce pages.
 
-= Features =
-- One-click toggles for each WooCommerce asset (JS/CSS)
+**Features**
+- One-click toggles for each WooCommerce asset JS and CSS
 - Grouped by functionality: Core Scripts, Cart, Block Styles, General Styles
-- AJAX-saving (no page reloads)
+- AJAX-saving with no page reloads
 - Toast confirmation on setting save
-- "Select All" and "Deselect All" buttons to quickly apply optimizations
+- Select All and Deselect All buttons to quickly apply optimizations
 
-By reducing what loads on non-commerce pages, your site becomes leaner and faster — especially for blog, landing, or informational pages.
+By reducing what loads on non-commerce pages, your site becomes leaner and faster especially for blog, landing, or informational pages.
 
-= How It Works =
+**How It Works**
 
-Only WooCommerce pages (like shop, cart, checkout, and product pages) truly need WooCommerce assets. So this plugin:
+Only WooCommerce pages (like shop, cart, checkout, and product pages) truly need WooCommerce assets. 
 
+So this plugin:
 - Lets you turn off WooCommerce assets on non-WooCommerce pages
 - Automatically preserves functionality where needed (e.g. checkout/cart)
 - Saves bandwidth, server load, and improves core Web Vitals
 
-There’s no need to write any code or modify theme files.
+Thereâ€™s no need to write any code or modify theme files.
 
 == Installation ==
 
@@ -53,15 +52,15 @@ There’s no need to write any code or modify theme files.
 
 = Does it work with all WooCommerce themes? =
 
-Yes! It works with any theme that uses standard WooCommerce scripts/styles.
+Yes, It works with any theme that uses standard WooCommerce scripts and styles.
 
 = Do I need to configure anything after activating? =
 
-Yes — visit **Settings > Woo Speed Repair** to turn off assets you don’t need.
+Yes, visit Settings then Woo Speed Repair to turn off assets you donâ€™t need.
 
 = Is it safe to disable everything? =
 
-Some assets are safe to disable if you’re not using that WooCommerce feature sitewide. For example: if you don’t use the mini cart, you can safely disable its styles/scripts on non-Woo pages.
+Some assets are safe to disable if youâ€™re not using that WooCommerce feature sitewide. For example, if you donâ€™t use the mini cart, you can safely disable its styles and scripts on non WooCommerce pages.
 
 = Can I undo a setting? =
 
@@ -76,6 +75,10 @@ Yes, just toggle the switch again to re-enable the asset.
 
 
 == Changelog ==
+
+= 4.1 =
+* Released: June 10, 2025
+* Corrected some UI elements
 
 = 4.0 =
 * Released: June 9, 2025

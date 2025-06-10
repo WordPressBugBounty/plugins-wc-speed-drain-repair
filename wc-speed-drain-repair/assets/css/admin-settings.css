@@ -13,12 +13,10 @@
     align-items: center;
     gap: 8px; /* ensures space between icon and text */
 }
-
 .woo-speed-bulk-btn:hover {
-    background: #00D78B;
+    background: #444;
     transform: translateY(-1px);
 }
-
 /* ✔ icon */
 .woo-speed-bulk-select::before {
     content: "✔";
@@ -27,7 +25,6 @@
     line-height: 1;
     display: inline-block;
 }
-
 /* ✖ icon */
 .woo-speed-bulk-deselect::before {
     content: "✖";
@@ -107,13 +104,11 @@
     .settings-sidebar {
         display: none !important;
     }
-
     /* Target the first column and make it full width */
     .wrap > div:first-child {
         flex: 1 1 100% !important;
         max-width: 100% !important;
     }
-
     /* Optional: make the entire .wrap container stack vertically */
     .wrap {
         flex-direction: column;
@@ -129,18 +124,14 @@
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 35%), 0 6px 20px 0 rgb(0 0 0 / 35%);
     z-index: 999;
 }
-
-
     .wpfi-hover-raise img {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         display: block;
         margin: 0 auto;
     }
-
     .wpfi-hover-raise:hover img {
         transform: translateY(-5px);
     }
-
     .settings-sidebar p {
         color: #fff;
         font-size: 16px;
