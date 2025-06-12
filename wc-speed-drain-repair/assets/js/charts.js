@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data: {
                 labels: wooAssetChartData.bar.labels,
                 datasets: [{
-                    label: 'Assets Disabled per Group',
+                    label: ' Assets Disabled',
                     data: wooAssetChartData.bar.values,
                     backgroundColor: '#d16aff'
                 }]

@@ -1,142 +1,142 @@
-.woo-speed-bulk-btn {
-    background: #d16aff;
-    color: #fff;
-    border: none;
-    padding: 10px 18px;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px; /* ensures space between icon and text */
-}
-.woo-speed-bulk-btn:hover {
-    background: #444;
-    transform: translateY(-1px);
-}
-/* ✔ icon */
-.woo-speed-bulk-select::before {
-    content: "✔";
-    color: #00d78b;
-    font-size: 16px;
-    line-height: 1;
-    display: inline-block;
-}
-/* ✖ icon */
-.woo-speed-bulk-deselect::before {
-    content: "✖";
-    color: #FFFF97;
-    font-size: 16px;
-    line-height: 1;
-    display: inline-block;
-}
-.woo-speed-toggle-row {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 16px;
-                    background: #efe;
-                    border-bottom: 1px solid #ddd;
-                }
-                .woo-speed-label-container {
-                    flex: 1;
-                    margin-right: 20px;
-                }
-                .woo-speed-toggle-label {
-                    font-size: 16px;
-                    font-weight: 500;
-                    margin-bottom: 3px;
-                    transition: color 0.3s ease;
-                    color: #222 !important;
-                }
-                .woo-speed-toggle-label.disabled {
-                    color: #999;
-                }
-                .woo-speed-desc {
-                    font-size: 13px;
-                    color: #666;
-                    margin-top: 5px;
-                    line-height: 1.4;
-                }
-                .woo-speed-switch {
-                    position: relative;
-                    display: inline-block;
-                    width: 50px;
-                    height: 24px;
-                }
-                .woo-speed-switch input {
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
-                }
-                .woo-speed-slider {
-                    position: absolute;
-                    cursor: pointer;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: #ccc;
-                    transition: .4s;
-                    border-radius: 24px;
-                }
-                .woo-speed-slider:before {
-                    position: absolute;
-                    content: "";
-                    height: 18px;
-                    width: 18px;
-                    left: 3px;
-                    bottom: 3px;
-                    background-color: white;
-                    transition: .4s;
-                    border-radius: 50%;
-                }
-                .woo-speed-switch input:checked + .woo-speed-slider {
-                    background-color: #d16aff;
-                }
-                .woo-speed-switch input:checked + .woo-speed-slider:before {
-                    transform: translateX(26px);
-                }
-                @media screen and (max-width: 768px) {
-    .settings-sidebar {
-        display: none !important;
-    }
-    /* Target the first column and make it full width */
-    .wrap > div:first-child {
-        flex: 1 1 100% !important;
-        max-width: 100% !important;
-    }
-    /* Optional: make the entire .wrap container stack vertically */
-    .wrap {
-        flex-direction: column;
-    }
-}
- .settings-sidebar {
-    text-align: center;
-    background-size: cover;
-    border-radius: 12px;
-    margin-top: 33px;
-    width: 380px;
-    padding: 5%;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 35%), 0 6px 20px 0 rgb(0 0 0 / 35%);
-    z-index: 999;
-    
-    margin-bottom: 69px;
-}
-    .wpfi-hover-raise img {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        display: block;
-        margin: 0 auto;
-    }
-    .wpfi-hover-raise:hover img {
-        transform: translateY(-5px);
-    }
-    .settings-sidebar p {
-        color: #fff;
-        font-size: 16px;
-        line-height: 1.5;
-        margin: 15px 0;
+.woo-speed-bulk-btn {
+    background: #d16aff;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* ensures space between icon and text */
+}
+.woo-speed-bulk-btn:hover {
+    background: #444;
+    transform: translateY(-1px);
+}
+/* ✔ icon */
+.woo-speed-bulk-select::before {
+    content: "✔";
+    color: #00d78b;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+}
+/* ✖ icon */
+.woo-speed-bulk-deselect::before {
+    content: "✖";
+    color: #FFFF97;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+}
+.woo-speed-toggle-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 16px;
+                    background: #efe;
+                    border-bottom: 1px solid #ddd;
+                }
+                .woo-speed-label-container {
+                    flex: 1;
+                    margin-right: 20px;
+                }
+                .woo-speed-toggle-label {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 3px;
+                    transition: color 0.3s ease;
+                    color: #222 !important;
+                }
+                .woo-speed-toggle-label.disabled {
+                    color: #999;
+                }
+                .woo-speed-desc {
+                    font-size: 13px;
+                    color: #666;
+                    margin-top: 5px;
+                    line-height: 1.4;
+                }
+                .woo-speed-switch {
+                    position: relative;
+                    display: inline-block;
+                    width: 50px;
+                    height: 24px;
+                }
+                .woo-speed-switch input {
+                    opacity: 0;
+                    width: 0;
+                    height: 0;
+                }
+                .woo-speed-slider {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    transition: .4s;
+                    border-radius: 24px;
+                }
+                .woo-speed-slider:before {
+                    position: absolute;
+                    content: "";
+                    height: 18px;
+                    width: 18px;
+                    left: 3px;
+                    bottom: 3px;
+                    background-color: white;
+                    transition: .4s;
+                    border-radius: 50%;
+                }
+                .woo-speed-switch input:checked + .woo-speed-slider {
+                    background-color: #d16aff;
+                }
+                .woo-speed-switch input:checked + .woo-speed-slider:before {
+                    transform: translateX(26px);
+                }
+                @media screen and (max-width: 768px) {
+    .settings-sidebar {
+        display: none !important;
+    }
+    /* Target the first column and make it full width */
+    .wrap > div:first-child {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+    /* Optional: make the entire .wrap container stack vertically */
+    .wrap {
+        flex-direction: column;
+    }
+}
+ .settings-sidebar {
+    text-align: center;
+    background-size: cover;
+    border-radius: 12px;
+    margin-top: 33px;
+    width: 380px;
+    padding: 5%;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 35%), 0 6px 20px 0 rgb(0 0 0 / 35%);
+    z-index: 999;
+    
+    margin-bottom: 69px;
+}
+    .wpfi-hover-raise img {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: block;
+        margin: 0 auto;
+    }
+    .wpfi-hover-raise:hover img {
+        transform: translateY(-5px);
+    }
+    .settings-sidebar p {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 15px 0;
     }
