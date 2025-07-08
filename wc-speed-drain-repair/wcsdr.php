@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: WooCommerce Speed Repair
+Plugin Name: WC Speed Repair
 Plugin URI: https://www.wpfixit.com
 Description: Optimize WooCommerce performance by disabling selected frontend assets that aren't needed on non-commerce pages. This plugin reduces load times and server resource usage by letting you control exactly which styles and scripts WooCommerce loads. Ideal for speeding up high-traffic or resource-heavy WooCommerce sites, with instant toggle-based settings and no coding required.
-Version: 4.4
+Version: 4.5
 Author: WP Fix It - WordPress Experts
 Author URI: https://www.wpfixit.com
 Requires Plugins: woocommerce

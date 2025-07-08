@@ -1,9 +1,9 @@
-=== WooCommerce Speed Repair ===
+=== WC Speed Repair ===
 Contributors: wpfixit
 Tags: Make WooCommerce sites BLAZING fast, WooCommerce Speed, disabling unused WooCommerce scripts and styles
 Requires at least: 5.5
 Tested up to: 6.8
-Stable tag: 4.4
+Stable tag: 4.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Make WooCommerce sites BLAZING fast by disabling unused scripts and styles with one click toggles.
@@ -60,6 +60,10 @@ Yes, just toggle the switch again to re-enable the asset.
 12. Per page list of style assets loading with disable option
 13. Meta box for custom handle input per page disable rules
 == Changelog ==
+
+= 4.5 =
+* Released: July 8, 2025
+* Adjusted name
 
 = 4.4 =
 * Released: June 12, 2025
